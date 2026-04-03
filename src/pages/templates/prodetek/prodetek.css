@@ -1,0 +1,53 @@
+/* Importation des polices de Prodetek */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+
+/* 🟢 LA BULLE PRODETEK : Ces variables ne s'appliqueront qu'ici ! */
+.theme-prodetek {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 96%;
+  --neon: 72 100% 50%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 96%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 55%;
+  --border: 0 0% 14%;
+  --input: 0 0% 14%;
+  --ring: 72 100% 50%;
+  
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* On force le fond sombre et la police sur tout le composant */
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+}
+
+/* 🟢 CLASSES UTILITAIRES DE PRODETEK */
+.theme-prodetek .font-display { font-family: var(--font-display); }
+.theme-prodetek .font-body { font-family: var(--font-body); }
+.theme-prodetek .text-outline { -webkit-text-stroke: 2px hsl(var(--neon)); color: transparent; }
+
+.theme-prodetek .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.theme-prodetek .glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: hsl(var(--neon) / 0.3);
+}
+
+.theme-prodetek .neon-glow { box-shadow: 0 0 40px hsl(var(--neon) / 0.3); }
+.theme-prodetek .neon-glow-sm { box-shadow: 0 0 20px hsl(var(--neon) / 0.2); }
+
+.theme-prodetek .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.theme-prodetek .skew-card { transform: skewX(-3deg); }
+.theme-prodetek .skew-card > * { transform: skewX(3deg); }

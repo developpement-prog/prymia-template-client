@@ -1,3 +1,6 @@
+// 🟢 1. On importe le fichier du template Prodetek
+import { prodetekTheme } from './src/pages/templates/prodetek/prodetek-theme.js';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        // --- COULEURS PRYMIA (Ton agence) ---
         background: "rgb(var(--bg-main) / <alpha-value>)",
         card: {
           highlight: "rgb(var(--bg-card-highlight) / <alpha-value>)", 
@@ -26,16 +30,25 @@ export default {
           emerald: "rgb(var(--brand-emerald) / <alpha-value>)",
           yellow: "rgb(var(--brand-yellow) / <alpha-value>)",
         },
+
+        // --- 🎨 COULEURS DES TEMPLATES CLIENTS ---
+        // 🟢 2. On injecte toutes les couleurs de Prodetek ici automatiquement !
+        ...prodetekTheme.colors,
       },
+      
       fontFamily: {
-        // 🟢 On garde la définition, mais on va l'utiliser avec font-semibold
+        // --- POLICES PRYMIA ---
         display: ['Teko', 'sans-serif'],
         body: ['Oswald', 'sans-serif'],
+
+        // 🟢 3. On injecte les polices de Prodetek automatiquement
+        ...prodetekTheme.fontFamily,
       },
-      // 🟢 Optionnel : tu peux définir des graisses spécifiques ici si besoin
+      
       fontWeight: {
         heading: '600',
       },
+      
       animation: {
         'spin-slow': 'spin 60s linear infinite',
       }
