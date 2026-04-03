@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
-// 🟢 On importe nos deux nouveaux composants !
 import SectionLabel from './SectionLabel';
 import TalentCard from './TalentCard';
 
 // --- 🟢 DONNÉES ---
-
 const talents = [
   {
     image: 'https://media.base44.com/images/public/69cd59698361db9db3f5e096/3e2f2b369_generated_71b4fc74.png',
@@ -30,7 +28,6 @@ const talents = [
 ];
 
 // --- 🟢 COMPOSANT PRINCIPAL ---
-
 export default function ProdetekTalents() {
   return (
     <section id="talents" className="relative px-6 overflow-hidden py-28 md:py-36 bg-darkbg">
@@ -56,9 +53,17 @@ export default function ProdetekTalents() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {/* 🟢 CORRECTION : Scroll horizontal sur mobile, grille sur desktop */}
+        <div className="flex gap-6 pb-4 overflow-x-auto snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
           {talents.map((talent, index) => (
-            <TalentCard key={talent.name} {...talent} index={index} />
+            <div 
+              key={talent.name} 
+              // 🟢 Sur mobile : la carte prend ~80% de l'écran pour laisser dépasser la suivante. 
+              // Sur desktop : elle s'adapte naturellement à la grille.
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0"
+            >
+              <TalentCard {...talent} index={index} />
+            </div>
           ))}
         </div>
       </div>
