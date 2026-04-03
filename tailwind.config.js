@@ -31,10 +31,16 @@ export default {
           yellow: "rgb(var(--brand-yellow) / <alpha-value>)",
         },
 
+        // 🟢 CORRECTION : Les nouvelles couleurs sont bien DANS le bloc "colors"
+        'card-highlight': 'rgb(var(--bg-card-highlight) / <alpha-value>)',
+        'card-deep': 'rgb(var(--bg-card-deep) / <alpha-value>)',
+        'card-accent': 'rgb(var(--bg-card-accent) / <alpha-value>)',
+        'text-dark': 'rgb(var(--text-dark) / <alpha-value>)',
+
         // --- 🎨 COULEURS DES TEMPLATES CLIENTS ---
         // 🟢 2. On injecte toutes les couleurs de Prodetek ici automatiquement !
         ...prodetekTheme.colors,
-      },
+      }, // <--- C'est ici que se ferme l'objet colors !
       
       fontFamily: {
         // --- POLICES PRYMIA ---
