@@ -53,14 +53,12 @@ export default function ProdetekTalents() {
           </motion.p>
         </div>
 
-        {/* 🟢 CORRECTION : Scroll horizontal sur mobile, grille sur desktop */}
         <div className="flex gap-6 pb-4 overflow-x-auto snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
           {talents.map((talent, index) => (
             <div 
               key={talent.name} 
-              // 🟢 Sur mobile : la carte prend ~80% de l'écran pour laisser dépasser la suivante. 
-              // Sur desktop : elle s'adapte naturellement à la grille.
-              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center shrink-0"
+              // 🟢 Correction UX Mobile
+              className="w-[280px] sm:w-[320px] md:w-auto md:min-w-0 snap-center shrink-0"
             >
               <TalentCard {...talent} index={index} />
             </div>
