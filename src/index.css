@@ -23,13 +23,16 @@
     --text-muted: 255 255 255 / 0.7;
   }
 
-  /* 🟢 CORRECTION : Les styles de balises doivent être EN DEHORS de :root */
-  
   body {
     background-color: rgb(var(--bg-main));
     color: rgb(var(--text-main));
-    /* Font-body par défaut (Oswald) pour tout le site */
-    @apply font-body antialiased selection:bg-card-highlight selection:text-text-dark;
+    @apply font-body antialiased;
+  }
+
+  /* 🟢 CORRECTION INFAILLIBLE : On utilise du pur CSS au lieu de Tailwind ici */
+  ::selection {
+    background-color: rgb(var(--bg-card-highlight));
+    color: rgb(var(--text-dark));
   }
 
   /* 🟢 TITRES H1 (Hero principal) - Passage en 600 */
@@ -56,5 +59,3 @@
 @layer components {
   /* Tu pourras ajouter tes classes de composants ici plus tard */
 }
-
-/* test Vercel */
