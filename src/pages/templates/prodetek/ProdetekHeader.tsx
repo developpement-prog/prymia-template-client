@@ -26,7 +26,8 @@ export default function ProdetekHeader() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/90 backdrop-blur-xl py-3 border-b border-neon/20'
+          // 🟢 CORRECTION : 'bg-darkbg/90' au lieu de 'bg-background/90'
+          ? 'bg-darkbg/90 backdrop-blur-xl py-3 border-b border-neon/20'
           : 'bg-transparent py-6'
       }`}
     >
@@ -37,7 +38,8 @@ export default function ProdetekHeader() {
           {/* Bouton Retour (exclusif au mode démo Prymia) */}
           <Link 
             to="/templates" 
-            className="flex items-center gap-2 text-muted-foreground hover:text-neon transition-colors font-body text-xs font-bold uppercase tracking-[0.2em] border border-border px-3 py-1.5 rounded-full hover:border-neon/50 bg-background/50 backdrop-blur-md"
+            // 🟢 CORRECTION : 'bg-darkbg/50' au lieu de 'bg-background/50'
+            className="flex items-center gap-2 text-muted-foreground hover:text-neon transition-colors font-body text-xs font-bold uppercase tracking-[0.2em] border border-border px-3 py-1.5 rounded-full hover:border-neon/50 bg-darkbg/50 backdrop-blur-md"
           >
             <ArrowLeft size={14} /> Retour
           </Link>
@@ -45,7 +47,8 @@ export default function ProdetekHeader() {
           {/* Logo Prodetek */}
           <Link to="/templates/prodetek" className="flex items-center gap-2 group">
             <div className="flex items-center justify-center transition-transform duration-300 -skew-x-12 w-9 h-9 bg-neon group-hover:rotate-3">
-              <span className="text-2xl skew-x-12 text-background font-display">P</span>
+              {/* 🟢 CORRECTION : text-darkbg au lieu de text-background pour la lettre P */}
+              <span className="text-2xl skew-x-12 text-darkbg font-display">P</span>
             </div>
             <span className="hidden text-2xl tracking-tight uppercase font-display text-foreground sm:block">
               Pro<span className="text-neon">detek</span>
@@ -115,7 +118,8 @@ export default function ProdetekHeader() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-background lg:hidden"
+            // 🟢 CORRECTION : 'bg-darkbg' au lieu de 'bg-background'
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-darkbg lg:hidden"
           >
             <button
               onClick={() => setIsMobileMenuOpen(false)}
@@ -168,7 +172,8 @@ export default function ProdetekHeader() {
                 <User className="w-4 h-4" />
                 <span>Mon Profil</span>
               </Link>
-              <button className="w-full px-10 py-4 bg-neon text-background font-body font-bold uppercase tracking-[0.2em] text-sm -skew-x-6">
+              {/* 🟢 CORRECTION : 'text-darkbg' au lieu de 'text-background' */}
+              <button className="w-full px-10 py-4 bg-neon text-darkbg font-body font-bold uppercase tracking-[0.2em] text-sm -skew-x-6">
                 <span className="block skew-x-6">Rejoindre</span>
               </button>
             </motion.div>
