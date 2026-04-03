@@ -19,7 +19,6 @@ const demos = [
     tags: ['Hôtellerie', 'Luxe'],
     available: false
   },
-  // Tu peux ajouter les autres ici...
 ];
 
 export default function TemplatesPage() {
@@ -89,6 +88,7 @@ export default function TemplatesPage() {
                     <div className="absolute inset-0 flex items-center justify-center transition-opacity opacity-0 bg-card-deep/40 group-hover:opacity-100">
                       <Link 
                         to={`/templates/${demo.slug}`}
+                        onClick={() => window.scrollTo(0, 0)} // 🟢 FORCER LE SCROLL EN HAUT
                         className="flex items-center gap-2 px-6 py-3 text-xs font-bold tracking-widest uppercase rounded-sm bg-card-highlight text-text-dark"
                       >
                         Voir la démo <ExternalLink size={14} />
@@ -116,6 +116,7 @@ export default function TemplatesPage() {
                   {demo.available ? (
                     <Link 
                       to={`/templates/${demo.slug}`}
+                      onClick={() => window.scrollTo(0, 0)} // 🟢 FORCER LE SCROLL EN HAUT ICI AUSSI
                       className="inline-flex items-center gap-2 text-sm font-bold text-card-highlight group/link"
                     >
                       Explorer <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
