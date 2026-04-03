@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- COULEURS DE MARQUE (RGB format pour Tailwind opacity) --- */
+    --brand-emerald: 6 150 104;    /* #069668 */
+    --brand-yellow: 255 255 128;   /* #ffff80 */
+
+    /* --- PALETTE D'HARMONIE --- */
+    --emerald-darker: 4 60 42;     
+    --emerald-lighter: 10 180 125; 
+
+    /* --- RÔLES --- */
+    --bg-main: var(--brand-emerald);
+    --bg-card-highlight: var(--brand-yellow); 
+    --bg-card-deep: var(--emerald-darker); 
+    --bg-card-accent: var(--brand-emerald);
+
+    --text-main: 255 255 255;
+    --text-dark: var(--emerald-darker);
+    --text-muted: 255 255 255 / 0.7;
+  }
+
+  /* 🟢 CORRECTION : Les styles de balises doivent être EN DEHORS de :root */
+  
+  body {
+    background-color: rgb(var(--bg-main));
+    color: rgb(var(--text-main));
+    /* Font-body par défaut (Oswald) pour tout le site */
+    @apply font-body antialiased selection:bg-card-highlight selection:text-text-dark;
+  }
+
+  /* 🟢 TITRES H1 (Hero principal) - Passage en 600 */
+  h1 {
+    @apply font-display uppercase tracking-tight leading-[0.9] font-semibold;
+  }
+
+  /* 🟢 TITRES H2 (Sections) - Passage en 600 */
+  h2 {
+    @apply font-display uppercase tracking-tight font-semibold text-3xl md:text-5xl lg:text-6xl;
+  }
+
+  /* 🟢 TITRES H3 (Sous-sections / Cartes) */
+  h3 {
+    @apply font-display uppercase tracking-tight font-semibold text-xl md:text-2xl;
+  }
+
+  /* 🟢 PARAGRAPHES */
+  p {
+    @apply font-body leading-relaxed text-base md:text-lg opacity-90;
+  }
+}
+
+@layer components {
+  /* Tu pourras ajouter tes classes de composants ici plus tard */
+}
