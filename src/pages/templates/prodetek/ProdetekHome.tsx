@@ -1,14 +1,13 @@
 import ProdetekHero from './ProdetekHero';
+import ProdetekFeatures from './ProdetekFeatures';
+import ProdetekTalents from './ProdetekTalents';
 
 export default function ProdetekHome() {
   return (
     <main>
-      {/* Notre magnifique Hero prend tout l'écran ici */}
       <ProdetekHero />
-      
-      {/* C'est ici qu'on viendra empiler les autres sections en dessous plus tard */}
-      {/* <ProdetekFeatures /> */}
-      {/* <ProdetekStats /> */}
+      <ProdetekFeatures />
+      <ProdetekTalents />
     </main>
   );
 }
