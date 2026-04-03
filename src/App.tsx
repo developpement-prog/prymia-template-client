@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SiteHeader from "@/components/layout/Header";
 import HeroHome from "@/components/layout/HeroHome";
 import PageHero from "@/components/layout/PageHero"; // Notre nouveau Hero secondaire
+import TemplatesPage from "./pages/Templatespage.tsx";
 
 function App() {
   return (
@@ -15,6 +16,15 @@ function App() {
           <Routes>
             {/* 🏠 Accueil - Hero Full Screen avec Stats */}
             <Route path="/" element={<HeroHome />} />
+
+            {/* 🟢 Nouvelle Route Templates */}
+            <Route path="/templates" element={<TemplatesPage />} />
+            
+            {/* Route pour une démo spécifique (ex: /templates/prodetek) */}
+            <Route 
+              path="/templates/:slug" 
+              element={<PageHero badge="Démo Live" title="Aperçu du Template" subtitle="Explorez les fonctionnalités de ce modèle premium." />} 
+            />
 
             {/* 🟢 Routes Virtuelles Services (SEO) */}
             <Route 

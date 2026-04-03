@@ -13,6 +13,7 @@ interface MenuSidebarProps {
 const navItems = [
   { label: "Accueil", path: "/" },
   { label: "Services", path: "/services" },
+  { label: "Templates", path: "/templates" },
   { label: "Réalisations", path: "/realisations" },
   { label: "Zones", path: "/agence-web/paris" },
   { label: "Tarifs", path: "/tarifs" },
