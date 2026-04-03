@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* --- COULEURS DE MARQUE (RGB format pour Tailwind opacity) --- */
-    --brand-emerald: 6 150 104;    /* #069668 */
+    --brand-emerald: 6 150 104;    /* #069668 (Ton Vert Prymia) */
     --brand-yellow: 255 255 128;   /* #ffff80 */
 
     /* --- PALETTE D'HARMONIE --- */
@@ -21,26 +21,29 @@
     --text-main: 255 255 255;
     --text-dark: var(--emerald-darker);
     --text-muted: 255 255 255 / 0.7;
+    
+    /* Variables de secours au cas où Tailwind les cherche pour tes boutons */
+    --cta-main: var(--brand-yellow);            
+    --cta-hover: 255 255 180;
   }
 
   body {
-    background-color: rgb(var(--bg-main));
-    color: rgb(var(--text-main));
-    @apply font-body antialiased;
+    /* 🟢 CORRECTION : On remet la magie de Tailwind pour réactiver le fond vert ! */
+    @apply bg-background text-text-main font-body antialiased;
   }
 
-  /* 🟢 CORRECTION INFAILLIBLE : On utilise du pur CSS au lieu de Tailwind ici */
+  /* 🟢 On garde le CSS pur ici pour empêcher Vercel de planter */
   ::selection {
     background-color: rgb(var(--bg-card-highlight));
     color: rgb(var(--text-dark));
   }
 
-  /* 🟢 TITRES H1 (Hero principal) - Passage en 600 */
+  /* 🟢 TITRES H1 (Hero principal) */
   h1 {
     @apply font-display uppercase tracking-tight leading-[0.9] font-semibold;
   }
 
-  /* 🟢 TITRES H2 (Sections) - Passage en 600 */
+  /* 🟢 TITRES H2 (Sections) */
   h2 {
     @apply font-display uppercase tracking-tight font-semibold text-3xl md:text-5xl lg:text-6xl;
   }
@@ -57,5 +60,5 @@
 }
 
 @layer components {
-  /* Tu pourras ajouter tes classes de composants ici plus tard */
+  /* Tes classes personnalisées */
 }

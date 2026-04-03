@@ -93,7 +93,7 @@ export default function ProdetekHero() {
           {/* 🟢 Changé : text-darkbg */}
           <button className="group relative px-10 py-4 bg-neon text-darkbg font-body font-bold uppercase tracking-[0.15em] text-sm -skew-x-6 transition-all hover:scale-105 neon-glow-sm">
             <span className="flex items-center gap-3 skew-x-6">
-              Commencer la détection
+              Voir les détections
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
           </button>
