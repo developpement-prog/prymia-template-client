@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-// 🟢 On ajoute le typage TypeScript
+// --- 🟢 TYPESCRIPT ---
 interface TalentCardProps {
   image: string;
   name: string;
@@ -19,17 +19,17 @@ export default function TalentCard({ image, name, position, age, club, index = 0
       transition={{ delay: index * 0.1 }}
       className="relative overflow-hidden cursor-pointer group rounded-2xl"
     >
-      {/* Image */}
+      {/* 🟢 Ton choix parfait de hauteur : aspect-[3/4] */}
       <div className="aspect-[3/4] overflow-hidden">
         <img
           src={image}
-          alt={`Portrait de ${name}, ${position} au ${club}`} // 🟢 SEO & Accessibilité
-          loading="lazy" // 🟢 Performance : Chargement différé
+          alt={`Portrait de ${name}, ${position}`} // SEO conservé
+          loading="lazy" // Vitesse conservée
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
         />
       </div>
 
-      {/* Gradient overlay - 🟢 Remplacé 'background' par 'darkbg' pour éviter le conflit de couleur ! */}
+      {/* 🟢 Le dégradé corrigé en "darkbg" pour éviter le vert Prymia */}
       <div className="absolute inset-0 bg-gradient-to-t from-darkbg via-darkbg/30 to-transparent" />
 
       {/* Neon line on hover */}
