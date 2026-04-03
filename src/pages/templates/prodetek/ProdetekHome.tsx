@@ -1,4 +1,5 @@
 import ProdetekHero from './ProdetekHero';
+import ProdetekRecentDetections from './ProdetekRecentDetections';
 import ProdetekFeatures from './ProdetekFeatures';
 import ProdetekTalents from './ProdetekTalents';
 import ProdetekCoaching from './ProdetekCoaching';
@@ -9,6 +10,7 @@ export default function ProdetekHome() {
   return (
     <main>
       <ProdetekHero />
+      <ProdetekRecentDetections />
       <ProdetekFeatures />
       <ProdetekTalents />
       <ProdetekCoaching />
