@@ -44,8 +44,8 @@ export default {
       
       fontFamily: {
         // --- POLICES PRYMIA ---
-        display: ['Teko', 'sans-serif'],
-        body: ['Oswald', 'sans-serif'],
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
 
         // 🟢 3. On injecte les polices de Prodetek automatiquement
         ...prodetekTheme.fontFamily,
